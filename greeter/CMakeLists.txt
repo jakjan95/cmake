@@ -23,3 +23,6 @@ set(FLAGS -Wall -Wextra -Werror -pedantic -Wconversion -O3)
 target_compile_options(${PROJECT_NAME} PRIVATE ${FLAGS})
 target_compile_options(${PROJECT_NAME}-lib PRIVATE ${FLAGS})
 target_compile_options(${PROJECT_NAME}-ut PRIVATE ${FLAGS})
+
+enable_testing()
+add_test(NAME greeterTests COMMAND ${PROJECT_NAME}-ut)
